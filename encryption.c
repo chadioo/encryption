@@ -11,18 +11,18 @@
 char generateKeyByte(char S[]);
 
 int main(int argc, char *argv[]) {
-
+    
     // Declartions
-
+    
     char keyF[256];
     char currentKey;
     char S[256]; char T[256];
-
+    
     //char messageF[256];
     //int mFileLength;
-
+    
     // Chad's code
-
+    
     FILE *keyFile;
     int keyChar;
     int i;
@@ -51,35 +51,36 @@ int main(int argc, char *argv[]) {
     
     // print arrays for testing
     /* for(i=0; i<256; i++){
-        printf("%c", S[i]);
-    } */
+     printf("%c", S[i]);
+     } */
     
     // Mike's code
-
+    
     /* FILE *inputFile;
-    FILE *outputFile;
-    int inputChar;
-        
-    if (argc < 3) printf("Input and output files need to be specified\n");
-    inputFile = fopen(argv[2], "r");
-    outputFile = fopen(argv[3], "w");
-        
-    assert(inputFile != NULL);
-    assert(outputFile != NULL);
-        
-        
-    while ((inputChar = fgetc(inputFile))!=EOF) {
-        currentKey = generateKeyByte(keyF);
-        inputChar^=currentKey;
-        fputc(inputChar, outputFile);
-    }
-    fclose(inputFile);
-    fclose(outputFile); */
+     FILE *outputFile;
+     int inputChar;
+         
+     if (argc < 3) printf("Input and output files need to be specified\n");
+     inputFile = fopen(argv[2], "r");
+     outputFile = fopen(argv[3], "w");
+         
+     assert(inputFile != NULL);
+     assert(outputFile != NULL);
+         
+         
+     while ((inputChar = fgetc(inputFile))!=EOF) {
+     currentKey = generateKeyByte(keyF);
+     inputChar^=currentKey;
+     fputc(inputChar, outputFile);
+     }
+     fclose(inputFile);
+     fclose(outputFile); */
 }
 
 char generateKeyByte(char S[]){
     static int i = 0;
     static int j = 0;
+    char t;
     i = (i+1) % 256;
     j = (j+S[i]) % 256;
     char temp;
@@ -90,3 +91,4 @@ char generateKeyByte(char S[]){
     char keyByte;
     return keyByte = S[t];
 }
+
